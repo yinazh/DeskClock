@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:id="@+id/address_content"
+        android:layout_height="30dp"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_location_on_24"/>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/iv_address"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/time_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_width="match_parent">
+
+        <com.yinazh.yclock.view.DigitalPanelView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true"
+            android:textSize="180sp" />
+        </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/other_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/tv_lunardate"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_height="match_parent"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+</LinearLayout>
