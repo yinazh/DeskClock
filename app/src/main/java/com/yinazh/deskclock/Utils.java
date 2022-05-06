@@ -367,14 +367,10 @@ public class Utils {
         final Locale l = Locale.getDefault();
 
         final String datePattern = DateFormat.getBestDateTimePattern(l, dateSkeleton);
-        Log.d("yinazh", "dateSkeleton = " + dateSkeleton);
-        Log.d("yinazh", "datePattern = " + datePattern);
         final String descriptionPattern = DateFormat.getBestDateTimePattern(l, descriptionSkeleton);
-        Log.d("yinazh", "descriptionSkeleton = " + descriptionSkeleton);
-        Log.d("yinazh", "descriptionPattern = " + descriptionPattern);
 
         final Date now = new Date();
-        dateDisplay.setText(new SimpleDateFormat(datePattern, l).format(now));
+        dateDisplay.setText(new SimpleDateFormat(dateSkeleton, l).format(now));
         dateDisplay.setVisibility(View.VISIBLE);
         dateDisplay.setContentDescription(new SimpleDateFormat(descriptionPattern, l).format(now));
     }
