@@ -40,6 +40,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,6 +61,7 @@ import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 import static java.util.Calendar.DAY_OF_WEEK;
+import static java.util.Calendar.getAvailableCalendarTypes;
 
 /**
  * Fragment that shows the clock (analog or digital), the next alarm info and the world clock.
@@ -130,6 +132,7 @@ public final class ClockFragment extends DeskClockFragment {
             mDigitalClock = (TextClock) mClockFrame.findViewById(R.id.digital_clock);
             mAnalogClock = (AnalogClock) mClockFrame.findViewById(R.id.analog_clock);
             Utils.setClockIconTypeface(mClockFrame);
+            mDigitalClock.setTypeface(ResourcesCompat.getFont(getActivity(), R.font.digital_mono));
             Utils.updateDate(mDateFormat, mDateFormatForAccessibility, mClockFrame);
             Utils.setClockStyle(mDigitalClock, mAnalogClock);
             Utils.setClockSecondsEnabled(mDigitalClock, mAnalogClock);
